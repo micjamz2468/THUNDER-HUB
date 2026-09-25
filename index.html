@@ -3,101 +3,500 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Thunder Hub - View our products and contact us on WhatsApp.">
+
 <title>Thunder Hub</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f5f5;color:#222}
-header{background:#111;color:#d4af37;text-align:center;padding:22px 15px}
-header h1{margin:0;font-size:30px}
-header p{margin:6px 0 0;color:#fff;font-size:16px}
-.hero{background:#222;color:#fff;text-align:center;padding:40px 18px}
-.hero h2{margin:0 0 12px;color:#d4af37;font-size:28px}
-.hero p{margin:0;line-height:1.5;font-size:17px}
-.container{width:94%;max-width:1100px;margin:28px auto 50px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.12)}
-.card img{width:100%;height:220px;object-fit:cover;display:block;background:#eee}
-.body{padding:16px}
-.body h3{margin:0 0 8px;font-size:20px}
-.body p{margin:0 0 15px;color:#666;line-height:1.5}
-.buttons{display:flex;gap:8px}
-.btn,button{flex:1;padding:12px 8px;border:0;border-radius:9px;font-weight:bold;text-align:center;text-decoration:none;cursor:pointer;font-size:14px}
-.whatsapp{background:#25D366;color:#fff}
-.share{background:#111;color:#d4af37}
-.empty{text-align:center;background:#fff;border-radius:12px;padding:35px 20px;color:#666}
-footer{background:#111;color:#fff;text-align:center;padding:25px 15px}
-footer strong{color:#d4af37}
-footer a{color:#25D366;text-decoration:none}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f5f5;
+  color:#222;
+}
+
+/* HEADER */
+header{
+  background:#111;
+  color:#d4af37;
+  text-align:center;
+  padding:22px 15px;
+}
+
+header h1{
+  margin:0;
+  font-size:30px;
+  letter-spacing:1px;
+}
+
+header p{
+  margin:6px 0 0;
+  color:#fff;
+  font-size:16px;
+}
+
+/* HERO */
+.hero{
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:40px 18px;
+}
+
+.hero h2{
+  margin:0 0 12px;
+  color:#d4af37;
+  font-size:28px;
+}
+
+.hero p{
+  margin:0 auto;
+  line-height:1.5;
+  font-size:17px;
+  max-width:700px;
+}
+
+/* CONTAINER */
+.container{
+  width:94%;
+  max-width:1100px;
+  margin:28px auto 50px;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+/* PRODUCT CARD */
+.card{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 3px 12px rgba(0,0,0,.12);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+
+/* PRODUCT IMAGE */
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  background:#eee;
+}
+
+/* PRODUCT BODY */
+.body{
+  padding:16px;
+}
+
+.body h3{
+  margin:0 0 8px;
+  font-size:20px;
+  color:#111;
+}
+
+.body p{
+  margin:0 0 15px;
+  color:#666;
+  line-height:1.5;
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  gap:8px;
+}
+
+.btn,
+button{
+  flex:1;
+  padding:12px 8px;
+  border:0;
+  border-radius:9px;
+  font-weight:bold;
+  text-align:center;
+  text-decoration:none;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  background:#25D366;
+  color:#fff;
+}
+
+/* SHARE */
+.share{
+  background:#111;
+  color:#d4af37;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:25px 15px;
+}
+
+footer strong{
+  color:#d4af37;
+}
+
+footer a{
+  color:#25D366;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  header h1{
+    font-size:26px;
+  }
+
+  .hero{
+    padding:32px 15px;
+  }
+
+  .hero h2{
+    font-size:24px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .card img{
+    height:170px;
+  }
+
+  .body{
+    padding:12px;
+  }
+
+  .body h3{
+    font-size:16px;
+  }
+
+  .body p{
+    font-size:13px;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .btn,
+  button{
+    width:100%;
+  }
+}
+
+/* VERY SMALL PHONES */
+@media(max-width:380px){
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .card img{
+    height:220px;
+  }
+}
 </style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-<h1>THUNDER HUB</h1>
-<p>Shop Smart. Shop Thunder.</p>
+
+  <h1>THUNDER HUB</h1>
+
+  <p>Shop Smart. Shop Thunder.</p>
+
 </header>
 
+
+<!-- HERO SECTION -->
 <section class="hero">
-<h2>Our Products</h2>
-<p>View our products and chat with us on WhatsApp for price and more information.</p>
+
+  <h2>Our Products</h2>
+
+  <p>
+    View our products and chat with us on WhatsApp
+    for price and more information.
+  </p>
+
 </section>
 
+
+<!-- PRODUCTS -->
 <div class="container">
-<div class="products" id="productGrid"></div>
+
+  <div class="products" id="productGrid"></div>
+
 </div>
 
+
+<!-- FOOTER -->
 <footer>
-<p><strong>Thunder Hub</strong></p>
-<p>For enquiries: <a href="https://wa.me/2348032744506" target="_blank">08032744506 WhatsApp</a></p>
+
+  <p>
+    <strong>Thunder Hub</strong>
+  </p>
+
+  <p>
+    For enquiries:
+    <a href="https://wa.me/2348032744506" target="_blank">
+      08032744506 WhatsApp
+    </a>
+  </p>
+
 </footer>
 
-<script>
-const WHATSAPP="2348032744506";
 
-/*
-  CUSTOMER PAGE
-  Products are controlled here by the admin.
-  Customers only see products, WhatsApp and Share.
-*/
-const products=[
-{name:"Product 1",image:"images/product1.jpg",description:"Quality product. Chat with us on WhatsApp for price and information."},
-{name:"Product 2",image:"images/product2.jpg",description:"Quality product. Chat with us on WhatsApp for price and information."},
-{name:"Product 3",image:"images/product3.jpg",description:"Quality product. Chat with us on WhatsApp for price and information."}
+<script>
+
+/* =========================================
+   WHATSAPP NUMBER
+========================================= */
+
+const WHATSAPP = "2348032744506";
+
+
+/* =========================================
+   PRODUCTS
+   Pictures are in the MAIN repository
+   beside index.html
+========================================= */
+
+const products = [
+
+  {
+    name:"Product 1",
+    image:"IMG-20260828-WA0011.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 2",
+    image:"IMG-20260828-WA0012.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 3",
+    image:"IMG-20260828-WA0013.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 4",
+    image:"IMG-20260828-WA0014.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 5",
+    image:"IMG-20260828-WA0015.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 6",
+    image:"IMG-20260828-WA0016.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 7",
+    image:"IMG-20260828-WA0017.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 8",
+    image:"IMG-20260828-WA0018.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 9",
+    image:"IMG-20260828-WA0019.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 10",
+    image:"IMG-20260828-WA0020.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  },
+
+  {
+    name:"Product 11",
+    image:"IMG-20260828-WA0021.jpg",
+    description:"Quality product. Chat with us on WhatsApp for price and information."
+  }
+
 ];
 
+
+/* =========================================
+   WHATSAPP FUNCTION
+========================================= */
+
 function wa(name){
-return "https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("Hello Thunder Hub, I want information about "+name+".");
+
+  return "https://wa.me/" +
+    WHATSAPP +
+    "?text=" +
+    encodeURIComponent(
+      "Hello Thunder Hub, I want information about " +
+      name +
+      "."
+    );
+
 }
+
+
+/* =========================================
+   SHARE PRODUCT
+========================================= */
 
 function shareProduct(p){
-const url=location.href.split("?")[0]+"?product="+encodeURIComponent(p.name);
-if(navigator.share){
-navigator.share({title:p.name+" | Thunder Hub",text:"Check out "+p.name+" on Thunder Hub.",url:url}).catch(()=>{});
-}else if(navigator.clipboard){
-navigator.clipboard.writeText(url).then(()=>alert("Product link copied."));
-}else{
-alert("Share this page: "+url);
-}
+
+  const url =
+    location.href.split("?")[0] +
+    "?product=" +
+    encodeURIComponent(p.name);
+
+
+  if(navigator.share){
+
+    navigator.share({
+
+      title:p.name + " | Thunder Hub",
+
+      text:
+        "Check out " +
+        p.name +
+        " on Thunder Hub.",
+
+      url:url
+
+    }).catch(()=>{});
+
+
+  }else if(navigator.clipboard){
+
+    navigator.clipboard.writeText(url)
+
+      .then(()=>{
+
+        alert("Product link copied.");
+
+      })
+
+      .catch(()=>{
+
+        alert("Unable to copy product link.");
+
+      });
+
+
+  }else{
+
+    alert("Share this page: " + url);
+
+  }
+
 }
 
-const grid=document.getElementById("productGrid");
+
+/* =========================================
+   DISPLAY PRODUCTS
+========================================= */
+
+const grid =
+  document.getElementById("productGrid");
+
 
 products.forEach((p,i)=>{
-const card=document.createElement("div");
-card.className="card";
-card.innerHTML=`
-<img src="${p.image}" alt="${p.name}">
-<div class="body">
-<h3>${p.name}</h3>
-<p>${p.description}</p>
-<div class="buttons">
-<a class="btn whatsapp" href="${wa(p.name)}" target="_blank">💬 WhatsApp</a>
-<button class="share" onclick="shareProduct(products[${i}])">🔗 Share</button>
-</div>
-</div>`;
-grid.appendChild(card);
+
+  const card =
+    document.createElement("div");
+
+  card.className = "card";
+
+
+  card.innerHTML = `
+
+    <img
+      src="${p.image}"
+      alt="${p.name}"
+      loading="lazy"
+    >
+
+    <div class="body">
+
+      <h3>
+        ${p.name}
+      </h3>
+
+      <p>
+        ${p.description}
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn whatsapp"
+          href="${wa(p.name)}"
+          target="_blank"
+        >
+          💬 WhatsApp
+        </a>
+
+        <button
+          class="share"
+          onclick="shareProduct(products[${i}])"
+        >
+          🔗 Share
+        </button>
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  grid.appendChild(card);
+
 });
+
 </script>
 
 </body>
